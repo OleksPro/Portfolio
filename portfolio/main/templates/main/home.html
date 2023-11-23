@@ -84,68 +84,41 @@
                 <div class="sub_title"></div>
                 <div class="links">
                     <a href="#">
-                        <svg width="69" height="64" viewBox="0 0 69 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g filter="url(#filter0_d_18_8)">
-                            <rect x="4" width="61" height="56" fill="#C4C4C4"/>
-                            </g>
-                            <defs>
-                            <filter id="filter0_d_18_8" x="0" y="0" width="69" height="64" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                            <feOffset dy="4"/>
-                            <feGaussianBlur stdDeviation="2"/>
-                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_18_8"/>
-                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_18_8" result="shape"/>
-                            </filter>
-                            </defs>
-                        </svg>
+                        {% for post in posts %}
+                            <img src="{{ post.img_email.url }}" alt="{{ post.title }} Image">
+                        {% endfor %}
                     </a>
                     <a href="#">
-                        <svg width="69" height="64" viewBox="0 0 69 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g filter="url(#filter0_d_18_7)">
-                            <rect x="4" width="61" height="56" fill="#C4C4C4"/>
-                            </g>
-                            <defs>
-                            <filter id="filter0_d_18_7" x="0" y="0" width="69" height="64" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                            <feOffset dy="4"/>
-                            <feGaussianBlur stdDeviation="2"/>
-                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_18_7"/>
-                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_18_7" result="shape"/>
-                            </filter>
-                            </defs>
-                        </svg>
+                        {% for post in posts %}
+                            <img src="{{ post.img_github.url }}" alt="{{ post.title }} Image">
+                        {% endfor %}
                     </a>
                     <a href="#">
-                        <svg width="69" height="64" viewBox="0 0 69 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g filter="url(#filter0_d_18_6)">
-                            <rect x="4" width="61" height="56" fill="#C4C4C4"/>
-                            </g>
-                            <defs>
-                            <filter id="filter0_d_18_6" x="0" y="0" width="69" height="64" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                            <feOffset dy="4"/>
-                            <feGaussianBlur stdDeviation="2"/>
-                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_18_6"/>
-                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_18_6" result="shape"/>
-                            </filter>
-                            </defs>
-                        </svg>                                
+                        {% for post in posts %}
+                            <img src="{{ post.img_linkedin.url }}" alt="{{ post.title }} Image">
+                        {% endfor %}                              
                     </a>
                 </div>
             </div>
             <div class="main_block_right">
-
-            </div>
-            <div class="image">
-                <img src="pictures/image.svg" alt="">
+                <div class="main_image">
+                    {% for post in posts %}
+                        <img src="{{ post.img_main.url }}" alt="{{ post.title }} Image">
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </main>
+    <div class="discriptoin">
+        <h1>ITas;ldas;lfm</h1><br>
+        <p>Nulla in velit a metus rhoncus tempus. Nulla congue nulla vel sem varius finibus.
+             Sed ornare sit amet lorem sed viverra. In vel urna quis libero viverra facilisis
+              ut ac est. Morbi commodo, eros in dignissim tempus, lacus odio rutrum augue,
+               in semper sem magna quis tellus. Etiam enim erat, suscipit eu semper a,
+                dictum sit amet elit. Nunc egestas nisi eget enim gravida facilisis.
+                 Pellentesque laoreet varius turpis vel pharetra. Ut ante justo,
+                  consequat vitae elementum tempor, accumsan nec eros. 
+        </p>
+    </div>
 </body>
 </html>
