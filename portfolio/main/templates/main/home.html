@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway:wght@700&display=swap" rel="stylesheet">
     <style>
         html, body, div, span, applet, object, iframe,
         h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -79,25 +80,29 @@
     <main class="main">
         <div class="main_block">
             <div class="main_block_left">
-                <div class="title"></div>
-                <div class="name"></div>
-                <div class="sub_title"></div>
-                <div class="links">
-                    <a href="#">
-                        {% for post in posts %}
-                            <img src="{{ post.img_email.url }}" alt="{{ post.title }} Image">
-                        {% endfor %}
-                    </a>
-                    <a href="#">
-                        {% for post in posts %}
-                            <img src="{{ post.img_github.url }}" alt="{{ post.title }} Image">
-                        {% endfor %}
-                    </a>
-                    <a href="#">
-                        {% for post in posts %}
-                            <img src="{{ post.img_linkedin.url }}" alt="{{ post.title }} Image">
-                        {% endfor %}                              
-                    </a>
+                <div class="block_left">
+                    <div class="title">Hi, I am</div>
+                    <div class="description">
+                        <div class="name">Oleksandr Prokopenko</div>
+                        <div class="sub_title">Python full stack developer</div>
+                    </div>
+                    <div class="links">
+                        <a href="#">
+                            {% for post in posts %}
+                                <img src="{{ post.img_email.url }}" alt="{{ post.title }} Image">
+                            {% endfor %}
+                        </a>
+                        <a href="#">
+                            {% for post in posts %}
+                                <img src="{{ post.img_github.url }}" alt="{{ post.title }} Image">
+                            {% endfor %}
+                        </a>
+                        <a href="#">
+                            {% for post in posts %}
+                                <img src="{{ post.img_linkedin.url }}" alt="{{ post.title }} Image">
+                            {% endfor %}                              
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="main_block_right">
