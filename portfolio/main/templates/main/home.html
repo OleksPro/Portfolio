@@ -84,24 +84,30 @@
                     <div class="title">Hi, I am</div>
                     <div class="description">
                         <div class="name">Oleksandr Prokopenko</div>
-                        <div class="sub_title">Python full stack developer</div>
+                        <div class="sub_title">Python full-stack developer</div>
                     </div>
                     <div class="links">
-                        <a href="#">
-                            {% for post in posts %}
-                                <img src="{{ post.img_email.url }}" alt="{{ post.title }} Image">
-                            {% endfor %}
-                        </a>
+                        <div class="link_box">
+                            <a href="#">
+                                {% for post in posts %}
+                                    <img src="{{ post.img_email.url }}" alt="{{ post.title }} Image">
+                                {% endfor %}
+                            </a>
+                        </div>
+                        <div class="link_box">
                         <a href="#">
                             {% for post in posts %}
                                 <img src="{{ post.img_github.url }}" alt="{{ post.title }} Image">
                             {% endfor %}
                         </a>
+                        </div>
+                        <div class="link_box">
                         <a href="#">
                             {% for post in posts %}
                                 <img src="{{ post.img_linkedin.url }}" alt="{{ post.title }} Image">
                             {% endfor %}                              
                         </a>
+                        </div>
                     </div>
                 </div>
             </div>
