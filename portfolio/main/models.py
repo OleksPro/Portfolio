@@ -9,6 +9,9 @@ class Post(models.Model):
     img_linkedin = models.ImageField(upload_to='images', blank=True)
     img_it = models.ImageField(upload_to='images', blank=True)
     img_separator = models.ImageField(upload_to='images', blank=True)
+    img_design = models.ImageField(upload_to='images', blank=True)
+    img_development = models.ImageField(upload_to='images', blank=True)
+    img_maintenance = models.ImageField(upload_to='images', blank=True)
 
     def __str__(self):
         return self.title

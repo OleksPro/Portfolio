@@ -163,6 +163,7 @@
 
 .my_desctiption_main {
     padding: 50px 100px;
+    z-index: 2;
 }
 
 .my_desctiption_title {
@@ -215,6 +216,7 @@
 .my_desctiption_logo {
     position: absolute;
     right: 3%;
+    z-index: 1;
 }
 
 /* ----------about me---------- */
@@ -251,7 +253,7 @@
 .about_me_title p{
     color: #000;
     text-align: center;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 30px;
     font-style: normal;
     font-weight: 700;
@@ -290,7 +292,7 @@
 .about_me_explore p {
     color: #000;
     text-align: center;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 15px;
     font-style: normal;
     font-weight: 600;
@@ -298,5 +300,49 @@
 }
 
 .about_me_img_separator{
-    padding: 75px 0px 85px;
+    padding: 100px 0px 120px;
+}
+
+.about_me_disctiption {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1070px;
+    gap: 50px;
+}
+
+.about_me_disctiption .about_me_item {
+    display: flex;
+    flex-direction: column;
+    max-width: 430px;
+    gap: 15px;
+}
+
+.about_me_disctiption .about_me_item .title {
+    position: relative;
+    color: #000;
+    font-family: 'Raleway', sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: normal;
+    letter-spacing: 3px;
+    z-index: 2;
+}
+
+.about_me_disctiption .about_me_item .text {
+    color: #6e6e6e;
+    text-align: justify;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.about_me_disctiption .about_me_item .title img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    transform: translate(-50%, -50%);
 }
