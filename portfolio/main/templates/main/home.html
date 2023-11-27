@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <style>
         html, body, div, span, applet, object, iframe,
         h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -90,21 +91,21 @@
                         <div class="link_box">
                             <a href="#">
                                 {% for post in posts %}
-                                    <img src="{{ post.img_email.url }}" alt="{{ post.title }} Image">
+                                    <img src="{{ post.img_email.url }}" alt="">
                                 {% endfor %}
                             </a>
                         </div>
                         <div class="link_box">
                         <a href="#">
                             {% for post in posts %}
-                                <img src="{{ post.img_github.url }}" alt="{{ post.title }} Image">
+                                <img src="{{ post.img_github.url }}" alt="">
                             {% endfor %}
                         </a>
                         </div>
                         <div class="link_box">
                         <a href="#">
                             {% for post in posts %}
-                                <img src="{{ post.img_linkedin.url }}" alt="{{ post.title }} Image">
+                                <img src="{{ post.img_linkedin.url }}" alt="">
                             {% endfor %}                              
                         </a>
                         </div>
@@ -114,22 +115,40 @@
             <div class="main_block_right">
                 <div class="main_image">
                     {% for post in posts %}
-                        <img src="{{ post.img_main.url }}" alt="{{ post.title }} Image">
+                        <img src="{{ post.img_main.url }}" alt="">
                     {% endfor %}
                 </div>
             </div>
         </div>
     </main>
-    <div class="discriptoin">
-        <h1>ITas;ldas;lfm</h1><br>
-        <p>Nulla in velit a metus rhoncus tempus. Nulla congue nulla vel sem varius finibus.
-             Sed ornare sit amet lorem sed viverra. In vel urna quis libero viverra facilisis
-              ut ac est. Morbi commodo, eros in dignissim tempus, lacus odio rutrum augue,
-               in semper sem magna quis tellus. Etiam enim erat, suscipit eu semper a,
-                dictum sit amet elit. Nunc egestas nisi eget enim gravida facilisis.
-                 Pellentesque laoreet varius turpis vel pharetra. Ut ante justo,
-                  consequat vitae elementum tempor, accumsan nec eros. 
-        </p>
+    <div class="my_desctiption">
+        <div class="my_desctiption_main">
+            <div class="my_desctiption_title">IT BERRIES</div>
+            <div class="my_desctiption_about">
+                Nulla in velit a metus rhoncus tempus. 
+                Nulla congue nulla vel sem varius finibus. 
+                Sed ornare sit amet lorem sed viverra. In vel urna quis libero viverra 
+                facilisis ut ac est. Morbi commodo, eros in dignissim tempus, lacus odio rutrum augue, 
+                in semper sem magna quis tellus. Etiam enim erat, suscipit eu semper a, 
+                dictum sit amet elit. Nunc egestas nisi eget enim gravida facilisis. 
+                Pellentesque laoreet varius turpis vel pharetra. Ut ante justo, 
+                consequat vitae elementum tempor, accumsan nec eros. 
+            </div>
+            <div class="my_desctiption_button">
+                <a href="">READ MORE</a>
+            </div>
+        </div>
+
+        <div class="my_desctiption_logo">
+            {% for post in posts %}
+                        <img src="{{ post.img_it.url }}" alt="">
+            {% endfor %}
+        </div>
+    </div>
+    <div class="about_me">
+        <div class="about_me_title">
+            <p>ABOUT ME</p>
+        </div>
     </div>
 </body>
 </html>

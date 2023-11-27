@@ -4,6 +4,8 @@
     text-decoration: none;
 }
 
+/* ----------Header---------- */
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -22,6 +24,8 @@
     display: flex;
     gap: 30px;
 }
+
+/* ----------Main---------- */
 
 .menu_item {
     display: flex;
@@ -95,7 +99,6 @@
     gap: 50px;
 }
 
-
 .menu_item:last-child {
     background-color: #fff;
     color: #000;
@@ -147,4 +150,103 @@
     border: 1px solid #000;
     background: grey;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+/* ----------my desctiption---------- */
+
+.my_desctiption {
+    display: flex;
+    width: 100%;
+    height: 310px;
+    background: linear-gradient(90deg, #1D1D1D 31.74%, #1D1D1D 90.49%, #1D1D1D 90.49%);
+}
+
+.my_desctiption_main {
+    padding: 50px 100px;
+}
+
+.my_desctiption_title {
+    color: #fff;
+    padding-bottom: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 5.561px;
+}
+
+.my_desctiption_about {
+    width: 1148px;
+    height: 89px;
+    padding-bottom: 30px;
+    color: #FFF;
+    text-align: justify;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 138.682%;
+}
+
+.my_desctiption_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 139px;
+    height: 25px;
+    border-left: 3px solid #fff;
+    border-right: 3px solid #fff;
+}
+
+.my_desctiption_button a {
+    color: #FFF;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    transition: transform 0.2s ease-in-out;
+}
+
+.my_desctiption_button a:hover {
+    transform: scale(1.1);
+}
+
+.my_desctiption_logo {
+    position: absolute;
+    right: 3%;
+}
+
+/* ----------about me---------- */
+
+.about_me {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    width: 100%;
+    height: 3000px;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(26, 21, 21, 0.00) 0%, rgba(1, 1, 1, 0.16) 100%), #FFF;
+    z-index: 1;
+}
+
+.about_me_title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 404px;
+    height: 107px;
+    border: 8px solid #000;
+    background: rgba(255, 255, 255, 0.00);
+    margin-top: 150px;
+}
+
+.about_me_title p{
+    color: #000;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 127.9%;
+    letter-spacing: 10.661px;
 }
