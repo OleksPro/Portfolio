@@ -88,35 +88,19 @@
                         <div class="sub_title">Python full-stack developer</div>
                     </div>
                     <div class="links">
-                        <div class="link_box">
-                            <a href="#">
-                                {% for post in posts %}
-                                    <img src="{{ post.img_email.url }}" alt="">
-                                {% endfor %}
-                            </a>
-                        </div>
-                        <div class="link_box">
-                        <a href="#">
-                            {% for post in posts %}
-                                <img src="{{ post.img_github.url }}" alt="">
-                            {% endfor %}
-                        </a>
-                        </div>
-                        <div class="link_box">
-                        <a href="#">
-                            {% for post in posts %}
-                                <img src="{{ post.img_linkedin.url }}" alt="">
-                            {% endfor %}                              
-                        </a>
-                        </div>
+                        {% for link in links %}
+                            <div class="link_box">
+                                <a href="#">
+                                <img src="{{ link.img.url }}" alt="{{ link.title }}" width="37">
+                                </a>
+                            </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
             <div class="main_block_right">
                 <div class="main_image">
-                    {% for post in posts %}
-                        <img src="{{ post.img_main.url }}" alt="">
-                    {% endfor %}
+                    <img src="/media/images/img_main.png" alt="main_logo" height="1140" width="1018">
                 </div>
             </div>
         </div>
@@ -140,9 +124,7 @@
         </div>
 
         <div class="my_desctiption_logo">
-            {% for post in posts %}
-                        <img src="{{ post.img_it.url }}" alt="">
-            {% endfor %}
+            <img src="/media/images/img_it.png" alt="logo">
         </div>
     </div>
     <div class="about_me">
@@ -158,42 +140,26 @@
                 <p>EXPLORE</p>
             </div>
             <div class="about_me_img_separator">
-                {% for post in posts %}
-                        <img src="{{ post.img_separator.url }}" alt="">
-            {% endfor %}
+                <img src="/media/images/img_separator.png" alt="logo_separator">
             </div>
             <div class="about_me_disctiption">
-                <div class="about_me_item">
-                    <div class="title">
-                        <img src="/media/images/img_maintenance.png" alt="" height="69" width="81">
-                        DESIGN
+                {% for service in services %}
+                    <div class="about_me_item">
+                        <div class="title">
+                            <img src="{{ service.img.url }}" alt="" max-height="70" max-width="81">
+                            {{ service.title }}
+                        </div>
+                        <div class="text">
+                            {{ service.description }}
+                        </div>
                     </div>
-                    <div class="text">
-                        I can design the site based on your needs and suggestions. 
-                        I can also design the site from scratch and consult you during the job.
-                    </div>
-                </div>
-                <div class="about_me_item">
-                    <div class="title">
-                        <img src="/media/images/img_maintenance.png" alt="" height="69" width="81">
-                        DEVELOPMENT
-                    </div>
-                    <div class="text">
-                        I can design the site based on your needs and suggestions. 
-                        I can also design the site from scratch and consult you during the job.
-                    </div>
-                </div>
-                <div class="about_me_item">
-                    <div class="title">
-                        <img src="/media/images/img_maintenance.png" alt="" height="69" width="81">
-                        MAINTENANCE
-                    </div>
-                    <div class="text">
-                        I can design the site based on your needs and suggestions. 
-                        I can also design the site from scratch and consult you during the job.</div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
 </body>
 </html>
+
+
+
+

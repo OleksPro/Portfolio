@@ -1,6 +1,15 @@
 from django.shortcuts import render
-from .models import Post
+from .models import SocialLinks, Services
 
 def home(request):
-    posts = Post.objects.all()
-    return render(request, 'main/home.html', {'posts': posts})
+    links = SocialLinks.objects.all()
+    services = Services.objects.all()
+
+    return render(
+        request, 
+        'main/home.html', 
+        {
+            'links': links,
+            'services': services
+        }
+    )
