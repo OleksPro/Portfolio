@@ -4,7 +4,7 @@
     text-decoration: none;
 }
 
-/* ----------Header---------- */
+/* ----------header---------- */
 
 .header {
     display: flex;
@@ -25,7 +25,7 @@
     gap: 30px;
 }
 
-/* ----------Main---------- */
+/* ----------main---------- */
 
 .menu_item {
     display: flex;
@@ -239,7 +239,7 @@
 }
 
 
-.about_me_title {
+.page_title {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -247,10 +247,9 @@
     height: 107px;
     border: 8px solid #000;
     background: rgba(255, 255, 255, 0.00);
-    margin-top: 150px;
 }
 
-.about_me_title p{
+.page_title p{
     color: #000;
     text-align: center;
     font-family: 'Raleway', sans-serif;
@@ -259,6 +258,14 @@
     font-weight: 700;
     line-height: 127.9%;
     letter-spacing: 10.661px;
+}
+
+#about_me {
+    margin: 140px 0 75px; 
+}
+
+#skills {
+    margin-bottom: 75px;
 }
 
 .about_me_text {
@@ -299,7 +306,7 @@
     line-height: normal;
 }
 
-.about_me_img_separator{
+.img_separator{
     padding: 100px 0px 120px;
 }
 
@@ -345,4 +352,57 @@
     top: 0;
     z-index: 1;
     transform: translate(-50%, -50%);
+}
+
+/* ----------skills---------- */
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skills_title {
+    position: relative;
+    left: -35%;
+}
+
+.skills_title p {
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 5.561px;
+}
+
+.skill_icons {
+    display: flex;
+    max-width: 1005px;
+    height: 1413px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.skill_box {
+
+}
+
+.skill_title {
+    display: flex;
+    width: 166px;
+    height: 52px;
+    justify-content: center;
+}
+
+.skill_title p {
+    color: #000;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 3.249px;
 }

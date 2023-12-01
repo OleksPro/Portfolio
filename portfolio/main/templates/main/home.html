@@ -56,9 +56,10 @@
             border-spacing: 0;
         }
     </style>
-    <title>Document</title>
+    <title>Oleksandr Prokopenko</title>
 </head>
 <body>
+    <!-- -----header----- -->
     <header class="header">
         <svg width="60" height="50" viewBox="0 0 60 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="header_logo">
             <g clip-path="url(#clip0_57_6)">
@@ -78,6 +79,7 @@
             <a href="" class="menu_item">Contact me</a>
         </div>
     </header>
+    <!-- -----main----- -->
     <main class="main">
         <div class="main_block">
             <div class="main_block_left">
@@ -105,6 +107,7 @@
             </div>
         </div>
     </main>
+    <!-- -----my desctiption----- -->
     <div class="my_desctiption">
         <div class="my_desctiption_main">
             <div class="my_desctiption_title">IT BERRIES</div>
@@ -127,9 +130,10 @@
             <img src="/media/images/img_it.png" alt="logo">
         </div>
     </div>
+    <!-- -----about me----- -->
     <div class="about_me">
         <div class="about_me_main">
-            <div class="about_me_title">
+            <div class="page_title" id="about_me">
                 <p>ABOUT ME</p>
             </div>
             <div class="about_me_text">
@@ -139,7 +143,7 @@
             <div class="about_me_explore">
                 <p>EXPLORE</p>
             </div>
-            <div class="about_me_img_separator">
+            <div class="img_separator">
                 <img src="/media/images/img_separator.png" alt="logo_separator">
             </div>
             <div class="about_me_disctiption">
@@ -155,6 +159,33 @@
                     </div>
                 {% endfor %}
             </div>
+            <div class="img_separator">
+                <img src="/media/images/img_separator.png" alt="logo_separator">
+            </div>
+        </div>
+        <!-- -----skills----- -->
+        <div class="skills">
+            <div class="page_title" id="skills">
+                <p>SKILLS</p>
+            </div>
+            <div class="skills_title">
+                <p>USING NOW:</p>
+            </div>
+            <div class="skill_icons">
+                {% for skill in skills %}
+                    <div class="skill_box">
+                        <img src="{{ skill.img.url }}" alt="{{ skill.title }}">
+                        <div class="skill_title">
+                            <p>{{ skill.title }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+
+
+
+
         </div>
     </div>
 </body>
