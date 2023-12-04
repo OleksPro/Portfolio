@@ -265,7 +265,7 @@
 }
 
 #skills {
-    margin-bottom: 75px;
+    margin-bottom: 25px;
 }
 
 .about_me_text {
@@ -365,6 +365,7 @@
 .skills_title {
     position: relative;
     left: -35%;
+    padding: 50px 0 50px;
 }
 
 .skills_title p {
@@ -379,30 +380,37 @@
 
 .skill_icons {
     display: flex;
-    max-width: 1005px;
-    height: 1413px;
+    max-width: 1150px;
     justify-content: center;
     padding: 20px;
+    flex-wrap: wrap;
 }
 
 .skill_box {
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
 }
 
 .skill_title {
     display: flex;
-    width: 166px;
-    height: 52px;
     justify-content: center;
+    align-items: center;
+    width: 240px;
+    height: 52px;
+    flex-direction: column;
 }
 
 .skill_title p {
     color: #000;
-    text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     letter-spacing: 3.249px;
+    padding-top: 30px;
 }

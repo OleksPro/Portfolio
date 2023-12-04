@@ -174,13 +174,17 @@
             <div class="skill_icons">
                 {% for skill in skills %}
                     <div class="skill_box">
-                        <img src="{{ skill.img.url }}" alt="{{ skill.title }}">
+                        <img src="{{ skill.img.url }}" alt="{{ skill.title }}" max-height="100" max-width="100">
                         <div class="skill_title">
                             <p>{{ skill.title }}</p>
                         </div>
                     </div>
                 {% endfor %}
             </div>
+            <div class="skills_title">
+                <p>LEARNING:</p>
+            </div>
+
 
 
 
