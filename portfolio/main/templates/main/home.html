@@ -90,13 +90,13 @@
                         <div class="sub_title">Python full-stack developer</div>
                     </div>
                     <div class="links">
-                        {% for link in links %}
-                            <div class="link_box">
-                                <a href="#">
-                                <img src="{{ link.img.url }}" alt="{{ link.title }}" width="37">
-                                </a>
-                            </div>
-                        {% endfor %}
+                        {% for link in social_links %}
+                        <div class="link_box">
+                          <a href="#">
+                            <img src="{{ link.img.url }}" alt="{{ link.text }}" width="37">
+                          </a>
+                        </div>
+                      {% endfor %}
                     </div>
                 </div>
             </div>
@@ -150,11 +150,11 @@
                 {% for service in services %}
                     <div class="about_me_item">
                         <div class="title">
-                            <img src="{{ service.img.url }}" alt="" max-height="70" max-width="81">
+                            <img src="{{ service.img.url }}" alt="{{ service.text }}" max-height="70" max-width="81">
                             {{ service.title }}
                         </div>
                         <div class="text">
-                            {{ service.description }}
+                            {{ service.text }}
                         </div>
                     </div>
                 {% endfor %}
@@ -174,7 +174,7 @@
             <div class="skill_icons">
                 {% for skill in skills %}
                     <div class="skill_box">
-                        <img src="{{ skill.img.url }}" alt="{{ skill.title }}" max-height="100" max-width="100">
+                        <img src="{{ skill.img.url }}" alt="{{ skill.text }}" max-height="100" max-width="100">
                         <div class="skill_title">
                             <p>{{ skill.title }}</p>
                         </div>
@@ -184,11 +184,6 @@
             <div class="skills_title">
                 <p>LEARNING:</p>
             </div>
-
-
-
-
-
 
         </div>
     </div>

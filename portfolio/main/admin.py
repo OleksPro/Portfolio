@@ -1,6 +1,4 @@
 from django.contrib import admin
-from .models import SocialLinks, Services, Skills
+from .models import AllImages
 
-admin.site.register(SocialLinks)
-admin.site.register(Services)
-admin.site.register(Skills)
+admin.site.register(AllImages)

@@ -1,44 +1,20 @@
 from django.db import models
 from PIL import Image
 
-    
-class SocialLinks(models.Model):
+select_options = (
+    ('sociallinks', 'Sochial links'),
+    ('services', 'Services'),
+    ('skills', 'Skills'),
+)
+
+class AllImages(models.Model):
     title = models.CharField(max_length=200)
-    img = models.ImageField(upload_to='img_social_links', blank=True)
-
-    def __str__(self):
-        return self.title
-    
-    class Meta:
-        verbose_name = 'Social Link'
-        verbose_name_plural = 'Social links'
-
-
-class Services(models.Model):
-    title = models.CharField(max_length=200)
-    description = models.TextField(max_length=300)
-    img = models.ImageField(upload_to='img_services', blank=True)
+    text = models.TextField(blank=True)
+    img = models.ImageField(upload_to='db_images', blank=True)
+    category = models.CharField(max_length=11, choices=select_options)
 
     def save(self, *args, **kwargs):
-        self.title = self.title.upper()
-        super(Services, self).save(*args, **kwargs)
-
-    def __str__(self):
-        return self.title
-    
-    class Meta:
-        verbose_name = 'Service'
-        verbose_name_plural = 'Services'
-
-
-class Skills(models.Model):
-    title = models.CharField(max_length=200)
-    img = models.ImageField(upload_to='img_skills', blank=True)
-
-    def save(self, *args, **kwargs):
-        self.title = self.title.upper()
-        super(Skills, self).save(*args, **kwargs)
-
+        super(AllImages, self).save(*args, **kwargs)
         image = Image.open(self.img.path)
         if image.height > 100 or image.width > 100:
             resize =  (100, 100)
@@ -47,7 +23,7 @@ class Skills(models.Model):
 
     def __str__(self):
         return self.title
-
+    
     class Meta:
-        verbose_name = 'Skill'
-
+        verbose_name = 'image'
+        verbose_name_plural = 'All images'
