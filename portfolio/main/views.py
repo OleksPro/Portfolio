@@ -12,5 +12,6 @@ class Home_page(ListView):
         ctx['social_links'] = AllImages.objects.filter(category='sociallinks')
         ctx['services'] = AllImages.objects.filter(category='services')
         ctx['skills'] = AllImages.objects.filter(category='skills')
+        ctx['learning'] = AllImages.objects.filter(category='learning')
 
         return ctx

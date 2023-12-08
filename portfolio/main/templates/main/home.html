@@ -184,9 +184,24 @@
             <div class="skills_title">
                 <p>LEARNING:</p>
             </div>
-
+            <div class="skill_icons">
+                {% for learn in learning %}
+                    <div class="skill_box">
+                        <img src="{{ learn.img.url }}" alt="{{ learn.text }}" max-height="100" max-width="100">
+                        <div class="skill_title">
+                            <p>{{ learn.title }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>  
         </div>
     </div>
+    <!-- -----portfolio----- -->
+        <div class="portfolio">
+            <div class="page_title" id="portfolio">
+                <p>PORTFOLIO</p>
+            </div>
+        </div>
 </body>
 </html>
 

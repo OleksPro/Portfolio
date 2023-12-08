@@ -5,6 +5,7 @@ select_options = (
     ('sociallinks', 'Sochial links'),
     ('services', 'Services'),
     ('skills', 'Skills'),
+    ('learning', 'learning')
 )
 
 class AllImages(models.Model):
