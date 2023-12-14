@@ -5,7 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'main/style.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <script src="{% static 'main/js/script.js' %}"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -197,11 +198,21 @@
         </div>
     </div>
     <!-- -----portfolio----- -->
-        <div class="portfolio">
+    <div class="portfolio">
+        <div class="portfolio_title">
             <div class="page_title" id="portfolio">
                 <p>PORTFOLIO</p>
             </div>
         </div>
+        <div class="portfolio_main">
+            <div class="portfolio_menu">
+                <div class="menu_link active" onclick="filterSelection('all')"><a href="#">ALL</a></div>
+                <div class="menu_link" onclick="filterSelection('coded')"><a href="#">CODED</a></div>
+                <div class="menu_link" onclick="filterSelection('design')"><a href="#">DESIGNED</a></div>
+            </div>          
+        </div>
+        
+    </div>
 </body>
 </html>
 
