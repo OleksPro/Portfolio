@@ -1,5 +1,6 @@
-from .models import AllImages
+from .models import AllImages, PortfolioSites
 from django.views.generic import ListView
+from django.shortcuts import render
 
 
 class Home_page(ListView):
@@ -13,5 +14,6 @@ class Home_page(ListView):
         ctx['services'] = AllImages.objects.filter(category='services')
         ctx['skills'] = AllImages.objects.filter(category='skills')
         ctx['learning'] = AllImages.objects.filter(category='learning')
+        ctx['portfolio_sites'] = PortfolioSites.objects.all()
 
         return ctx
