@@ -162,3 +162,4 @@ cython_debug/
 #.idea/
 
 portfolio/media/db_images/*
+portfolio/media/site_images/*

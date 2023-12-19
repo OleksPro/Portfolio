@@ -213,11 +213,26 @@
         </div>
         <div class="portfolio_sites">
             {% for site in portfolio_sites %}
-                <div class="sites_img">
-                    <a href="{{ site.site_link }}" target="_blank"><img src="{{ site.img.url }}" alt="{{ site.title }}"></a>
+                <div class="sites_img_conatainer">
+                    <a href="{{ site.site_link }}" target="_blank"><img class="sites_img" src="{{ site.img.url }}" alt="{{ site.title }}"></a>
                 </div>
             {% endfor %}
         </div> 
+        <div class="portfolio_footer">
+            <p>And many more to come!</p>
+        </div>   
+    </div>
+    <!-- -----contact----- -->
+    <div class="contact">
+        <div class="page_title" id="contact">
+            <p>CONTACT</p>
+        </div>
+        
+
+
+
+
+
 
     </div>
 </body>

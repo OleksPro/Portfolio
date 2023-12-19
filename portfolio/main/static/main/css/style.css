@@ -422,6 +422,7 @@
 }
 
 /* ----------portfolio---------- */
+
 .portfolio_title {
     display: flex;
     position: relative;
@@ -494,10 +495,49 @@
 .portfolio_sites {
     display: flex;
     justify-content: center;
-    padding: 20px;
+    padding: 20px 20px 0;
     flex-wrap: wrap;
     gap: 20px;
     background: #1A1A1A;
 }
 
+.sites_img_conatainer {
+    max-width: 100%;
+}
 
+.sites_img {
+    width: 100%; /* Займає 100% ширини контейнера */
+    height: auto;
+    display: block;
+}
+
+.portfolio_footer {
+    display: flex;
+    width: 100%;
+    height: 70px;
+    background: #1A1A1A;
+    justify-content: center;
+    align-items: center;
+}
+
+.portfolio_footer p {
+    color: #FFFBFB;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+/* ----------contact---------- */
+
+.contact {
+    display: flex;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(26, 21, 21, 0.00) 0%, rgba(0, 0, 0, 0.16) 100%), #FFF;
+    justify-content: center;
+}
+
+#contact {
+    margin: 140px 0 60px;
+}
