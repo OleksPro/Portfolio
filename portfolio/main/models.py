@@ -1,8 +1,7 @@
 from django.db import models
 from PIL import Image
 
-select_options = (
-    ('sociallinks', 'Sochial links'),
+img_category = (
     ('services', 'Services'),
     ('skills', 'Skills'),
     ('learning', 'learning'),
@@ -11,8 +10,8 @@ select_options = (
 class AllImages(models.Model):
     title = models.CharField(max_length=200)
     text = models.TextField(null=True, blank=True)
-    img = models.ImageField(upload_to='db_images', blank=True)
-    category = models.CharField(max_length=11, choices=select_options)
+    img = models.ImageField(upload_to='all_images', blank=True)
+    category = models.CharField(blank=True, max_length=11, choices=img_category)
 
     def save(self, *args, **kwargs):
         super(AllImages, self).save(*args, **kwargs)
@@ -30,13 +29,20 @@ class AllImages(models.Model):
         verbose_name_plural = 'All images'
 
 
-class PortfolioSites(models.Model):
+links_category = (
+    ('social_links', 'social_links'),
+    ('site_links', 'site_links'),
+    ('footer_links', 'footer_links'),
+)
+
+class AllLinks(models.Model):
     title = models.CharField(max_length=200)
     img = models.ImageField(upload_to='site_images', blank=True)
-    site_link = models.URLField(null=True, blank=True)
+    link = models.URLField(null=True, blank=True)
+    category = models.CharField(blank=True, max_length=12, choices=links_category)
 
     def save(self, *args, **kwargs):
-        super(PortfolioSites, self).save(*args, **kwargs)
+        super(AllLinks, self).save(*args, **kwargs)
         image = Image.open(self.img.path)
         if image.height > 640 or image.width > 400:
             resize =  (640, 400)
@@ -47,5 +53,5 @@ class PortfolioSites(models.Model):
         return self.title
     
     class Meta:
-        verbose_name = 'Portfolio site'
-        verbose_name_plural = 'Portfolio sites'
+        verbose_name = 'Link'
+        verbose_name_plural = 'All links'

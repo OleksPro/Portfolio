@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import AllImages, PortfolioSites
+from .models import AllImages, AllLinks
 
 admin.site.register(AllImages)
-admin.site.register(PortfolioSites)
+admin.site.register(AllLinks)

@@ -80,10 +80,10 @@
                         <div class="sub_title">Python full-stack developer</div>
                     </div>
                     <div class="links">
-                        {% for link in social_links %}
+                        {% for social_link in social_links %}
                         <div class="link_box">
-                          <a href="#">
-                            <img src="{{ link.img.url }}" alt="{{ link.text }}" width="37">
+                          <a href="{{ social_link.link }}" target="_blank">
+                            <img src="{{ social_link.img.url }}" alt="{{ social_link.text }}" width="37">
                           </a>
                         </div>
                       {% endfor %}
@@ -241,7 +241,15 @@
             <img src="/media/images/img_arrow_top.png" alt="arrow">
             <p>BACK TO TOP</p>
         </div>
-
+        <div class="links">
+            {% for footer_link in footer_links %}
+                <div class="link_box">
+                <a href="#">
+                    <img src="{{ footer_link.img.url }}" alt="{{ footer_link.text }}" width="37">
+                </a>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 </footer>
 </html>
