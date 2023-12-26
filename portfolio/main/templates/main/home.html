@@ -13,49 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <style>
-        html, body, div, span, applet, object, iframe,
-        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-        a, abbr, acronym, address, big, cite, code,
-        del, dfn, em, img, ins, kbd, q, s, samp,
-        small, strike, strong, sub, sup, tt, var,
-        b, u, i, center,
-        dl, dt, dd, ol, ul, li,
-        fieldset, form, label, legend,
-        table, caption, tbody, tfoot, thead, tr, th, td,
-        article, aside, canvas, details, embed, 
-        figure, figcaption, footer, header, hgroup, 
-        menu, nav, output, ruby, section, summary,
-        time, mark, audio, video {
-            margin: 0;
-            padding: 0;
-            border: 0;
-            font-size: 100%;
-            font: inherit;
-            vertical-align: baseline;
-        }
-        /* HTML5 display-role reset for older browsers */
-        article, aside, details, figcaption, figure, 
-        footer, header, hgroup, menu, nav, section {
-            display: block;
-        }
-        body {
-            line-height: 1;
-        }
-        ol, ul {
-            list-style: none;
-        }
-        blockquote, q {
-            quotes: none;
-        }
-        blockquote:before, blockquote:after,
-        q:before, q:after {
-            content: '';
-            content: none;
-        }
-        table {
-            border-collapse: collapse;
-            border-spacing: 0;
-        }
+
     </style>
     <title>Oleksandr Prokopenko</title>
 </head>
@@ -140,7 +98,7 @@
                 {% for service in services %}
                     <div class="about_me_item">
                         <div class="title">
-                            <img src="{{ service.img.url }}" alt="{{ service.text }}" max-height="70" max-width="81">
+                            <img src="{{ service.img.url }}" alt="img" max-height="70" max-width="81">
                             {{ service.title }}
                         </div>
                         <div class="text">
@@ -223,15 +181,33 @@
         <div class="img_separator">
             <img src="/media/images/img_separator.png" alt="logo_separator">
         </div>
-        <form action="" class="contact_form">
-            <input type="text" placeholder="ENTER YOUR NAME*">
-            <input type="text" placeholder="ENTER YOU EMAIL*">
-            <input type="tel" id="phoneInput" placeholder="PHONE NUMBER" maxlength="17">
-            <textarea type="text" placeholder="YOUR MESSAGE*"></textarea>
+        <form method="POST" class="contact_form" autocomplete="off">
+            {% csrf_token %}
+    
+            <div class="form_input">
+                <label for="{{ form.name.id_for_label }}"></label>
+                {{ form.name }}
+            </div>
+        
+            <div class="form_input">
+                <label for="{{ form.email.id_for_label }}"></label>
+                {{ form.email }}
+            </div>
+        
+            <div class="form_input" id="phone_number">
+                <label for="{{ form.phone_number.id_for_label }}"></label>
+                {{ form.phone_number }}
+            </div>
+
+            <div class="form_message">
+                <label for="{{ form.message.id_for_label }}"></label>
+                {{ form.message }}
+            </div>
+            <div class="contact_buttom_container">
+                <button class="contact_buttom">SUBMIT</button>
+            </div>
         </form>
-        <div class="contact_buttom_container">
-            <button class="contact_buttom">SUBMIT</button>
-        </div>
+
     </div>
 </body>
 <!-- -----footer----- -->
