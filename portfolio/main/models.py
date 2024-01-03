@@ -29,7 +29,6 @@ class AllImages(models.Model):
         verbose_name = 'image'
         verbose_name_plural = 'All images'
 
-
 links_category = (
     ('social_links', 'social_links'),
     ('site_links', 'site_links'),
@@ -56,7 +55,6 @@ class AllLinks(models.Model):
     class Meta:
         verbose_name = 'Link'
         verbose_name_plural = 'All links'
-
 
 class CallbackForm(forms.Form):
     name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'placeholder': 'ENTER YOUR NAME*'}))

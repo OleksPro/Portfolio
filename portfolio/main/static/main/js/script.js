@@ -1,22 +1,24 @@
-function filterSelection(category) {
-  // Забираємо клас 'active' у всіх кнопок
-  const buttons = document.querySelectorAll('.menu_link');
-  buttons.forEach(button => button.classList.remove('active'));
+document.addEventListener("DOMContentLoaded", function () {
+    var menuItems = document.querySelectorAll('.menu_item');
+    
+    menuItems.forEach(function (menuItem) {
+        menuItem.addEventListener('click', function (event) {
+            event.preventDefault();
+            var target = event.currentTarget.getAttribute('data-target');
+            scrollToHandler(target);
+        });
+    });
+});
 
-  // Додаємо клас 'active' тільки обраній кнопці
-  const selectedButton = document.querySelector(`.menu_link[data-category="${category}"]`);
-  selectedButton.classList.add('active');
+function scrollToHandler(elementId) {
+    var element = document.getElementById(elementId);
+    if (element) {
+        element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+            inline: 'start'
+        });
+    } else {
+        console.error("Елемент з ідентифікатором " + elementId + " не знайдено.");
+    }
 }
-
-// // Дозволяє вводити в поле тільки номер телефону
-// document.addEventListener('DOMContentLoaded', function () {
-//   document.getElementById('phoneInput').addEventListener('input', function (event) {
-//       let inputValue = event.target.value;
-//       let numericValue = inputValue.replace(/[^\d+]/g, ''); // Видалення всіх символів, крім цифр та "+"
-
-//       // Розділити число на групи за 3 цифри, додаючи пробіл
-//       let formattedValue = numericValue.replace(/(\d{3})(?=\d)/g, '$1 ');
-
-//       event.target.value = formattedValue;
-//   });
-// });
