@@ -18,14 +18,15 @@
     <!-- -----header----- -->
     <header class="header">
         <div class="header_menu">
-            <a href="#" class="menu_item" data-target="about_me_scroll">About me</a>
-            <a href="#" class="menu_item" data-target="skills_scroll">Skills</a>
-            <a href="#" class="menu_item" data-target="portfolio_scroll">Portfolio</a>
-            <a href="#" class="menu_item" data-target="contact_scroll">Contact me</a>
+            <a href="#main_scroll" class="menu_item active">Main</a>
+            <a href="#about_me_scroll" class="menu_item">About me</a>
+            <a href="#skills_scroll" class="menu_item">Skills</a>
+            <a href="#portfolio_scroll" class="menu_item">Portfolio</a>
+            <a href="#contact_me_scroll" class="menu_item">Contact me</a>
         </div>
     </header>
     <!-- -----main----- -->
-    <main class="main">
+    <section class="main" id="main_scroll">
         <div class="main_block">
             <div class="main_block_left">
                 <div class="block_left">
@@ -51,7 +52,7 @@
                 </div>
             </div>
         </div>
-    </main>
+    </section>
     <!-- -----my desctiption----- -->
     <div class="my_desctiption">
         <div class="my_desctiption_main">
@@ -76,14 +77,14 @@
         </div>
     </div>
     <!-- -----about me----- -->
-    <div class="about_me" id="about_me_scroll">
+    <section class="about_me" id="about_me_scroll">
         <div class="about_me_main">
             <div class="page_title" id="about_me">
                 <p>ABOUT ME</p>
             </div>
             <div class="about_me_text">
                 <p>Nulla in velit a metus rhoncus tempus. Nulla congue nulla vel sem varius finibus. 
-                Sed ornare sit amet lorem sed viverra. In vel urna quis libero viverra facilisis ut ac est.
+                Sed ornare sit amet lorem sed viverra. In vel urna quis libero viverra facilisis ut ac est.</p>
             </div>
             <div class="about_me_explore">
                 <p>EXPLORE</p>
@@ -108,41 +109,41 @@
                 <img src="/media/images/img_separator.png" alt="logo_separator">
             </div>
         </div>
-        <!-- -----skills----- -->
-        <div class="skills" id="skills_scroll">
-            <div class="page_title" id="skills">
-                <p>SKILLS</p>
-            </div>
-            <div class="skills_title">
-                <p>USING NOW:</p>
-            </div>
-            <div class="skill_icons">
-                {% for skill in skills %}
-                    <div class="skill_box">
-                        <img src="{{ skill.img.url }}" alt="{{ skill.text }}" max-height="100" max-width="100">
-                        <div class="skill_title">
-                            <p>{{ skill.title }}</p>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-            <div class="skills_title">
-                <p>LEARNING:</p>
-            </div>
-            <div class="skill_icons">
-                {% for learn in learning %}
-                    <div class="skill_box">
-                        <img src="{{ learn.img.url }}" alt="{{ learn.text }}" max-height="100" max-width="100">
-                        <div class="skill_title">
-                            <p>{{ learn.title }}</p>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>  
+    </section>
+    <!-- -----skills----- -->
+    <section class="skills" id="skills_scroll">
+        <div class="page_title" id="skills">
+            <p>SKILLS</p>
         </div>
-    </div>
+        <div class="skills_title">
+            <p>USING NOW:</p>
+        </div>
+        <div class="skill_icons">
+            {% for skill in skills %}
+                <div class="skill_box">
+                    <img src="{{ skill.img.url }}" alt="{{ skill.text }}" max-height="100" max-width="100">
+                    <div class="skill_title">
+                        <p>{{ skill.title }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="skills_title">
+            <p>LEARNING:</p>
+        </div>
+        <div class="skill_icons">
+            {% for learn in learning %}
+                <div class="skill_box">
+                    <img src="{{ learn.img.url }}" alt="{{ learn.text }}" max-height="100" max-width="100">
+                    <div class="skill_title">
+                        <p>{{ learn.title }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>  
+    </section>
     <!-- -----portfolio----- -->
-    <div class="portfolio" id="portfolio_scroll">
+    <section class="portfolio" id="portfolio_scroll">
         <div class="portfolio_title">
             <div class="page_title" id="portfolio">
                 <p>PORTFOLIO</p>
@@ -165,9 +166,9 @@
         <div class="portfolio_footer">
             <p>And many more to come!</p>
         </div>   
-    </div>
+    </section>
     <!-- -----contact----- -->
-    <div class="contact" id="contact_scroll">
+    <section class="contact" id="contact_me_scroll">
         <div class="page_title" id="contact">
             <p>CONTACT</p>
         </div>
@@ -178,7 +179,7 @@
         <div class="img_separator">
             <img src="/media/images/img_separator.png" alt="logo_separator">
         </div>
-        <form method="POST" class="contact_form" autocomplete="off">
+        <form method="POST" action="#" class="contact_form" autocomplete="off">
             {% csrf_token %}
     
             <div class="form_input">
@@ -201,16 +202,15 @@
                 {{ form.message }}
             </div>
             <div class="contact_buttom_container">
-                <button class="contact_buttom">SUBMIT</button>
+                <button class="contact_buttom" type="submit">SUBMIT</button>
             </div>
         </form>
-
-    </div>
+    </section>
 </body>
 <!-- -----footer----- -->
 <footer>
     <div class="footer_main">
-        <div class="arrow">
+        <div class="arrow scroll_trigger" data-target="main_scroll">
             <img src="/media/images/img_arrow_top.png" alt="arrow">
             <p>BACK TO TOP</p>
         </div>

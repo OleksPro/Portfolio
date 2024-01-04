@@ -1,6 +1,5 @@
 from django.db import models
 from PIL import Image
-from django import forms
 
 img_category = (
     ('services', 'Services'),
@@ -29,6 +28,7 @@ class AllImages(models.Model):
         verbose_name = 'image'
         verbose_name_plural = 'All images'
 
+
 links_category = (
     ('social_links', 'social_links'),
     ('site_links', 'site_links'),
@@ -55,15 +55,3 @@ class AllLinks(models.Model):
     class Meta:
         verbose_name = 'Link'
         verbose_name_plural = 'All links'
-
-class CallbackForm(forms.Form):
-    name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'placeholder': 'ENTER YOUR NAME*'}))
-    email = forms.EmailField(widget=forms.TextInput(attrs={'placeholder': 'ENTER YOUR EMAIL*'}))
-    phone_number = forms.CharField(max_length=13, widget=forms.TextInput(attrs={'placeholder': 'PHONE NUMBER'}))
-    message = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'YOUR MESSAGE*'}))
-
-    def __str__(self):
-        return self.name
-    
-    class Meta:
-        verbose_name = 'Contact form'
