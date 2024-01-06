@@ -1,9 +1,9 @@
-from .models import AllImages, AllLinks
+from django.core.mail import send_mail
+from django.contrib import messages
+from django.shortcuts import render
 from django.views.generic import ListView
 from .forms import ContactForm
-from django.core.mail import send_mail, BadHeaderError
-from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from .models import AllImages, AllLinks
 
 
 class Home_page(ListView):
@@ -22,30 +22,41 @@ class Home_page(ListView):
         ctx['site_links'] = AllLinks.objects.filter(category='site_links')
         ctx['footer_links'] = AllLinks.objects.filter(category='footer_links')
 
+        # Додайте об'єкт вашої форми до контексту
+        ctx['contact_form'] = ContactForm()
+
         return ctx
-
+    
     def post(self, request, *args, **kwargs):
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            subject = "Тестове повідомлення"
-            body = {
-                'name': form.cleaned_data['name'],
-                'email': form.cleaned_data['email'],
-                'phone_number': form.cleaned_data['phone_number'],
-                'message': form.cleaned_data['message']
-            }
-            message = "\n".join(body.values())
-            try:
-                send_mail(
-                    subject, 
-                    message,
-                    'admin@example.com',
-                    ['admin@example.com']
-                )
-            except BadHeaderError:
-                return HttpResponse("Не коректні дані")
-            return redirect("main:homepage")
+            form = ContactForm(request.POST)
+            if form.is_valid():
+                # Отримати дані з форми
+                name = form.cleaned_data['name']
+                email = form.cleaned_data['email']
+                phone_number = form.cleaned_data['phone_number']
+                message = form.cleaned_data['message']
 
-        return render(request, "main/home.html", {'form': form})
+                # Відправлення електронного листа
+                subject = 'Новий запит від {}'.format(name)
+                message_body = f'Ім\'я: {name}\nEmail: {email}\nТелефон: {phone_number}\nПовідомлення: {message}'
+                from_email = 'Oleks.Prokopenko92@gmail.com'  # Ваша електронна адреса
+                to_email = 'Oleks.Prokopenko92@gmail.com'  # Електронна адреса отримувача (ваша електронна адреса)
 
+                send_mail(subject, message_body, from_email, [to_email])
 
+                # Опціонально, можна також зберегти дані в базу даних
+                # form.save()
+
+                # Додайте повідомлення
+                messages.success(request, 'Thank you for your inquiry. We will contact you shortly.')
+
+                # Оновіть контекст знову, щоб передати форму та будь-які інші дані
+                return self.get(request, *args, **kwargs)
+
+            # Якщо форма не є валідною, додайте помилки до повідомлень
+            for errors in form.errors.values():
+                for error in errors:
+                    messages.error(request, f'{error}')
+
+            # Оновіть контекст знову, щоб передати форму та будь-які інші дані
+            return self.get(request, *args, **kwargs)

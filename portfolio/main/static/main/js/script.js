@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     runOnScroll();
     scrollSections();
+    setTimeout();
 });
 
 window.addEventListener("scroll", runOnScroll);
@@ -37,3 +38,10 @@ function scrollSections() {
         });
     };
 }
+
+setTimeout(function() {
+    var messages = document.querySelectorAll('.messages li');
+    messages.forEach(function(message) {
+      message.style.display = 'none';
+    });
+  }, 7000);

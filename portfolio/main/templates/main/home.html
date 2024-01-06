@@ -179,7 +179,7 @@
         <div class="img_separator">
             <img src="/media/images/img_separator.png" alt="logo_separator">
         </div>
-        <form method="POST" action="#" class="contact_form" autocomplete="off">
+        <!-- <form method="POST" action="#" class="contact_form" autocomplete="off">
             {% csrf_token %}
     
             <div class="form_input">
@@ -204,7 +204,24 @@
             <div class="contact_buttom_container">
                 <button class="contact_buttom" type="submit">SUBMIT</button>
             </div>
+        </form> -->
+
+        {% if messages %}
+            <ul class="error_message">
+            {% for message in messages %}
+                <li class="{% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        
+        <form method="post" action="" class="contact_form">
+            {% csrf_token %}
+            {{ contact_form.as_p }}
+            <div class="contact_buttom_container">
+                <button class="contact_buttom" type="submit">SUBMIT</button>
+            </div>
         </form>
+
     </section>
 </body>
 <!-- -----footer----- -->
