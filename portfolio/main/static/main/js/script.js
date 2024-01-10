@@ -4,9 +4,14 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout();
 });
 
+// add scroll to top page
+function scrollToTop(){
+    window.scrollTo(0,0);
+}
+
 window.addEventListener("scroll", runOnScroll);
 
-// Прозорість навбара
+// Transparency of the menu
 function runOnScroll() {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     
@@ -17,8 +22,8 @@ function runOnScroll() {
     };
 }
 
+// Adds page scrolling
 function scrollSections() {
-    // Додає скролл сторінки
     let sections = document.querySelectorAll('section');
     let navLinks = document.querySelectorAll('.header_menu a');
 
@@ -39,9 +44,10 @@ function scrollSections() {
     };
 }
 
+// Deletes messages
 setTimeout(function() {
     var messages = document.querySelectorAll('.messages li');
     messages.forEach(function(message) {
       message.style.display = 'none';
     });
-  }, 7000);
+}, 7000);

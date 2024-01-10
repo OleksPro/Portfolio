@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
     <title>Oleksandr Prokopenko</title>
 </head>
 <body>
@@ -151,9 +152,9 @@
         </div>
         <div class="portfolio_main">
             <div class="portfolio_menu">
-                <div class="menu_link active" onclick="filterSelection('all')"><a href="#">ALL</a></div>
-                <div class="menu_link" onclick="filterSelection('coded')"><a href="#">CODED</a></div>
-                <div class="menu_link" onclick="filterSelection('design')"><a href="#">DESIGNED</a></div>
+                <div class="menu_link active"><a href="#">ALL</a></div>
+                <div class="menu_link"><a href="#">CODED</a></div>
+                <div class="menu_link"><a href="#">DESIGNED</a></div>
             </div>         
         </div>
         <div class="portfolio_sites">
@@ -179,32 +180,6 @@
         <div class="img_separator">
             <img src="/media/images/img_separator.png" alt="logo_separator">
         </div>
-        <!-- <form method="POST" action="#" class="contact_form" autocomplete="off">
-            {% csrf_token %}
-    
-            <div class="form_input">
-                <label for="{{ form.name.id_for_label }}"></label>
-                {{ form.name }}
-            </div>
-        
-            <div class="form_input">
-                <label for="{{ form.email.id_for_label }}"></label>
-                {{ form.email }}
-            </div>
-        
-            <div class="form_input" id="phone_number">
-                <label for="{{ form.phone_number.id_for_label }}"></label>
-                {{ form.phone_number }}
-            </div>
-
-            <div class="form_message">
-                <label for="{{ form.message.id_for_label }}"></label>
-                {{ form.message }}
-            </div>
-            <div class="contact_buttom_container">
-                <button class="contact_buttom" type="submit">SUBMIT</button>
-            </div>
-        </form> -->
 
         {% if messages %}
             <ul class="error_message">
@@ -214,7 +189,7 @@
             </ul>
         {% endif %}
         
-        <form method="post" action="" class="contact_form">
+        <form method="post" action="" class="contact_form" lang="eu" autocomplete="off">
             {% csrf_token %}
             {{ contact_form.as_p }}
             <div class="contact_buttom_container">
@@ -227,19 +202,20 @@
 <!-- -----footer----- -->
 <footer>
     <div class="footer_main">
-        <div class="arrow scroll_trigger" data-target="main_scroll">
+        <div class="arrow" onclick="scrollToTop()">
             <img src="/media/images/img_arrow_top.png" alt="arrow">
             <p>BACK TO TOP</p>
         </div>
-        <div class="links">
+        <div class="">
             {% for footer_link in footer_links %}
-                <div class="link_box">
-                <a href="#">
+                <div class="">
+                <a href="{{ footer_link.link }}">
                     <img src="{{ footer_link.img.url }}" alt="{{ footer_link.text }}" width="37">
                 </a>
                 </div>
             {% endfor %}
         </div>
+        <p class="copy_text">&copy;2024 Olexandr Prokopenko All Rights Reserved.</p>
     </div>
 </footer>
 </html>
