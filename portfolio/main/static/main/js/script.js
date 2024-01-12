@@ -25,7 +25,7 @@ function runOnScroll() {
 // Adds page scrolling
 function scrollSections() {
     let sections = document.querySelectorAll('section');
-    let navLinks = document.querySelectorAll('.header_menu a');
+    let navLinks = document.querySelectorAll('.navbar a');
 
     window.onscroll = () => {
         sections.forEach(sec => {
@@ -37,7 +37,7 @@ function scrollSections() {
             if (top >= offset && top < offset + height ) {
                 navLinks.forEach(links => {
                     links.classList.remove('active');
-                    document.querySelector('.header_menu a[href*=' + id + ']').classList.add('active');
+                    document.querySelector('.navbar a[href*=' + id + ']').classList.add('active');
                 });
             };
         });

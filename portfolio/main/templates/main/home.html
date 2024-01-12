@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
     <script src="{% static 'main/js/script.js' %}"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,18 +14,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Oleksandr Prokopenko</title>
 </head>
 <body>
     <!-- -----header----- -->
     <header class="header">
-        <div class="header_menu">
-            <a href="#main_scroll" class="menu_item active">Main</a>
-            <a href="#about_me_scroll" class="menu_item">About me</a>
-            <a href="#skills_scroll" class="menu_item">Skills</a>
-            <a href="#portfolio_scroll" class="menu_item">Portfolio</a>
-            <a href="#contact_me_scroll" class="menu_item">Contact me</a>
-        </div>
+        <a href="" class="logo">Logo</a>
+        <label for="check" class="icons">
+            <i class='bx bx-menu-alt-right' id="menu_icon"></i>
+            <i class='bx bx-x' id="close_icon"></i>
+        </label>
+        <nav class="navbar">
+            <a href="#main_scroll" class="menu_item active" style="--i:0;">Main</a>
+            <a href="#about_me_scroll" class="menu_item" style="--i:1;">About me</a>
+            <a href="#skills_scroll" class="menu_item" style="--i:2;">Skills</a>
+            <a href="#portfolio_scroll" class="menu_item" style="--i:3;">Portfolio</a>
+            <a href="#contact_me_scroll" class="menu_item" style="--i:4;">Contact me</a>
+        </nav>
     </header>
     <!-- -----main----- -->
     <section class="main" id="main_scroll">
@@ -206,7 +213,7 @@
             <img src="/media/images/img_arrow_top.png" alt="arrow">
             <p>BACK TO TOP</p>
         </div>
-        <div class="">
+        <div class="footer_links">
             {% for footer_link in footer_links %}
                 <div class="">
                 <a href="{{ footer_link.link }}">
