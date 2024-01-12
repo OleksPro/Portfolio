@@ -1,12 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
     runOnScroll();
     scrollSections();
+    clickLincInNavbarMobile();
     setTimeout();
 });
 
 // add scroll to top page
 function scrollToTop(){
     window.scrollTo(0,0);
+}
+
+function clickLincInNavbarMobile() {
+    document.querySelectorAll('.menu_item').forEach(e => {
+        e.addEventListener('click', () => {
+            document.querySelector('#check').click();
+        })
+    })
 }
 
 window.addEventListener("scroll", runOnScroll);
