@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function () {
     runOnScroll();
     scrollSections();
     clickLincInNavbarMobile();
-    setTimeout();
 });
 
 // add scroll to top page
@@ -52,11 +51,3 @@ function scrollSections() {
         });
     };
 }
-
-// Deletes messages
-setTimeout(function() {
-    var messages = document.querySelectorAll('.messages li');
-    messages.forEach(function(message) {
-      message.style.display = 'none';
-    });
-}, 7000);

@@ -131,7 +131,8 @@ table {
     font-size: 2rem;
     color: #fff;
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .navbar a {
@@ -166,7 +167,7 @@ table {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 840px) {
     .icons {
         display: inline-flex;
     }
@@ -422,7 +423,7 @@ table {
     line-height: 138.682%;
 }
 
-.my_desctiption_button {
+/* .my_desctiption_button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -443,7 +444,7 @@ table {
 
 .my_desctiption_button a:hover {
     transform: scale(1.1);
-}
+} */
 
 .my_desctiption_logo {
     position: absolute;
@@ -977,5 +978,6 @@ label[for="id_message"] {
     color: #fff;
     font-family: 'Nunito', sans-serif;
     padding-top: 40px;
+    text-align: center;
 }
 
