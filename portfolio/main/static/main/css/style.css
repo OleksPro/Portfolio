@@ -395,7 +395,7 @@ table {
 }
 
 .my_desctiption_main {
-    padding: 5vw 10vw;
+    padding: 3vw 10vw;
     z-index: 2;
 }
 
@@ -417,10 +417,10 @@ table {
     color: #FFF;
     text-align: justify;
     font-family: 'Open Sans', sans-serif;
-    font-size: 15px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 138.682%;
+    line-height: 200%;
 }
 
 /* .my_desctiption_button {
@@ -981,3 +981,20 @@ label[for="id_message"] {
     text-align: center;
 }
 
+.lenguage {
+    display: flex;
+    padding: 30px 0px;
+    gap: 30px;
+}
+
+.lenguage a {
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    border-bottom: 2px solid transparent; /* Додайте початкову лінію і встановіть її прозорість */
+    transition: border-bottom 0.2s ease-in-out; /* Додайте плавність для лінії */
+}
+
+.lenguage a:hover {
+    border-bottom: 2px solid #fff; /* Змініть кольор лінії при наведенні курсору */
+}

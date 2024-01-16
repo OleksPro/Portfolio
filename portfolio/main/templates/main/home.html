@@ -66,16 +66,22 @@
     <!-- -----my desctiption----- -->
     <div class="my_desctiption">
         <div class="my_desctiption_main">
-            <div class="my_desctiption_title">IT BERRIES</div>
+            <div class="my_desctiption_title">IT CAREER</div>
             <div class="my_desctiption_about">
-                Nulla in velit a metus rhoncus tempus. 
-                Nulla congue nulla vel sem varius finibus. 
-                Sed ornare sit amet lorem sed viverra. In vel urna quis libero viverra 
-                facilisis ut ac est. Morbi commodo, eros in dignissim tempus, lacus odio rutrum augue, 
-                in semper sem magna quis tellus. Etiam enim erat, suscipit eu semper a, 
-                dictum sit amet elit. Nunc egestas nisi eget enim gravida facilisis. 
-                Pellentesque laoreet varius turpis vel pharetra. Ut ante justo, 
-                consequat vitae elementum tempor, accumsan nec eros. 
+                This is my web portfolio! 
+                 I am a young developer who is actively studying Fullstack development
+                 and has skills in Python. My goal is to create modern and innovative
+                 web applications that are functional and of high quality. 
+                 On the frontend, I use HTML, CSS, and JavaScript to develop user interfaces. 
+                 Ensuring user comfort and visual aesthetics is always in the 
+                 first place for me, I keep an eye on interaction and convenience. 
+                 In my backend projects, I use Python and various frameworks, 
+                 such as Django, to create stable and fast server applications. 
+                 I have practical experience with various databases, including SQLite and MySQL. 
+                 I am always open to new challenges and willing to learn and expand my skills. 
+                 I look forward to joining your project and contributing 
+                 to the creation of high quality web applications. 
+                 Thank you for your visit and interest in my achievements and projects!
             </div>
             <!-- <div class="my_desctiption_button">
                 <a href="">READ MORE</a>
@@ -161,9 +167,9 @@
         </div>
         <div class="portfolio_main">
             <div class="portfolio_menu">
-                <div class="menu_link active"><a href="#">ALL</a></div>
-                <div class="menu_link"><a href="#">CODED</a></div>
-                <div class="menu_link"><a href="#">DESIGNED</a></div>
+                <div class="menu_link active"><a href="#" onclick="return false;">ALL</a></div>
+                <div class="menu_link"><a href="#" onclick="return false;">CODED</a></div>
+                <div class="menu_link"><a href="#" onclick="return false;">DESIGNED</a></div>
             </div>         
         </div>
         <div class="portfolio_sites">
@@ -198,13 +204,37 @@
             </ul>
         {% endif %}
         
-        <form method="post" action="" class="contact_form" lang="eu" autocomplete="off">
+        <!-- <form method="post" action="" class="contact_form" lang="eu" autocomplete="off">
             {% csrf_token %}
             {{ contact_form.as_p }}
             <div class="contact_buttom_container">
                 <button class="contact_buttom" type="submit">SUBMIT</button>
             </div>
+        </form> -->
+
+        <form method="post" action="" class="contact_form" lang="eu" autocomplete="off">
+            {% csrf_token %}
+            <label for="{{ contact_form.name.id_for_label }}">Name:</label>
+            <input type="text" name="{{ contact_form.name.name }}" id="{{ contact_form.name.id_for_label }}"
+                   placeholder="ENTER YOUR NAME*" maxlength="{{ contact_form.name.max_length }}" required>
+            
+            <label for="{{ contact_form.email.id_for_label }}">Email:</label>
+            <input type="email" name="{{ contact_form.email.name }}" id="{{ contact_form.email.id_for_label }}"
+                   placeholder="ENTER YOUR EMAIL*" required>
+        
+            <label for="{{ contact_form.phone_number.id_for_label }}">Phone Number:</label>
+            <input type="text" name="{{ contact_form.phone_number.name }}" id="{{ contact_form.phone_number.id_for_label }}"
+                   placeholder="PHONE NUMBER" maxlength="{{ contact_form.phone_number.max_length }}">
+            
+            <label for="{{ contact_form.message.id_for_label }}">Message:</label>
+            <textarea name="{{ contact_form.message.name }}" id="{{ contact_form.message.id_for_label }}"
+                      placeholder="YOUR MESSAGE*" required></textarea>
+        
+            <div class="contact_buttom_container">
+                <button class="contact_buttom" type="submit">SUBMIT</button>
+            </div>
         </form>
+
 
     </section>
 </body>
@@ -225,6 +255,10 @@
             {% endfor %}
         </div>
         <p class="copy_text">&copy;2024 Olexandr Prokopenko All Rights Reserved.</p>
+        <div class="lenguage">
+            <a href="">English</a>
+            <a href="">Ukrainian</a>
+        </div>
     </div>
 </footer>
 </html>
