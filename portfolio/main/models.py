@@ -9,7 +9,9 @@ img_category = (
 
 class AllImages(models.Model):
     title = models.CharField(max_length=200)
-    text = models.TextField(null=True, blank=True)
+    title_uk = models.CharField(max_length=200, null=True, blank=True)
+    text = models.TextField(null=True, blank=True, max_length=500)
+    text_uk = models.TextField(null=True, blank=True, max_length=500)
     img = models.ImageField(upload_to='all_images', blank=True)
     category = models.CharField(blank=True, max_length=11, choices=img_category)
 

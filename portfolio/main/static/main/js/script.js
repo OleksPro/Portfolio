@@ -9,6 +9,7 @@ function scrollToTop(){
     window.scrollTo(0,0);
 }
 
+// hide mobile menu
 function clickLincInNavbarMobile() {
     document.querySelectorAll('.menu_item').forEach(e => {
         e.addEventListener('click', () => {

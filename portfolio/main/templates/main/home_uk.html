@@ -1,0 +1,79 @@
+{% extends 'main/home.html' %}
+
+{% block title %}
+    <title>Олександр Прокопенко</title>
+{% endblock %}
+
+{% block navbar %}
+    <nav class="navbar">
+        <a href="#main_scroll" class="menu_item active" style="--i:0;">Головна</a>
+        <a href="#about_me_scroll" class="menu_item" style="--i:1;">Про мене</a>
+        <a href="#skills_scroll" class="menu_item" style="--i:2;">Вміння</a>
+        <a href="#portfolio_scroll" class="menu_item" style="--i:3;">Портфоліо</a>
+        <a href="#contact_me_scroll" class="menu_item" style="--i:4;">Контакти</a>
+    </nav>
+{% endblock %}
+
+{% block name %}
+    <div class="title">Привіт, я</div>
+    <div class="description">
+        <div class="name">Олександр Прокопенко</div>
+        <div class="sub_title">Python full-stack розробник</div>
+    </div>
+{% endblock %}
+
+{% block description %}
+    <div class="my_desctiption_title">ІТ-КАР'ЄРА</div>
+    <div class="my_desctiption_about">
+        Це моє веб-портфоліо! 
+        Я молодий розробник, який активно вивчає Fullstack розробку
+        та має навички в Python. Моя мета - створювати сучасні та інноваційні
+        функціональні та якісні веб-додатки. 
+        На фронтенді я використовую HTML, CSS та JavaScript для розробки користувацьких інтерфейсів. 
+        Забезпечення користувацького комфорту та візуальної естетики завжди на 
+        для мене завжди на першому місці, я стежу за взаємодією та зручністю. 
+        У своїх бекенд-проектах я використовую Python та різні фреймворки, 
+        такі як Django, для створення стабільних та швидких серверних додатків. 
+        Маю практичний досвід роботи з різними базами даних, включаючи SQLite та MySQL. 
+        Я завжди відкритий до нових викликів і готовий вчитися та розширювати свої навички. 
+        Я з нетерпінням чекаю можливості приєднатися до вашого проекту і зробити свій внесок 
+        до створення високоякісних веб-додатків. 
+        Дякую за ваш візит та інтерес до моїх досягнень і проектів!
+    </div>
+{% endblock %}
+
+{% block about_me_title %}
+    <p>Про мене</p>
+{% endblock %}
+
+{% block about_me %}
+    <div class="about_me_text">
+        Я шукаю своє місце у світі коду та технологій. 
+        Мій шлях почався з інтересу до розробки, 
+        а зараз я молодий розробник, готовий вкладати енергію та ідеї у створення інноваційних веб-додатків.
+        Я відкритий до нових викликів, ділюся знаннями та вчуся у інших. 
+        Разом ми можемо створити щось велике!
+    </div>
+{% endblock %}
+
+{% block services %}
+    <div class="title">
+        <img src="{{ service.img.url }}" alt="img" max-height="70" max-width="81">
+        {{ service.title_uk }}
+    </div>
+    <div class="text">
+        {{ service.text_uk }}
+    </div>
+{% endblock %}
+
+{% block skill_title %}
+    <p>Вміння</p>
+{% endblock %}
+
+{% block using_now %}
+    <p>Використовую:</p>
+{% endblock %}
+
+{% block learn %}
+    <p>Вивчаю:</p>
+{% endblock %}

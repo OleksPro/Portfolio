@@ -16,7 +16,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
     
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>Oleksandr Prokopenko</title>
+    {% block title %}
+        <title>Oleksandr Prokopenko</title>
+    {% endblock %}
 </head>
 <body>
     <!-- -----header----- -->
@@ -27,6 +29,7 @@
             <i class='bx bx-menu-alt-right' id="menu_icon"></i>
             <i class='bx bx-x' id="close_icon"></i>
         </label>
+    {% block navbar %}    
         <nav class="navbar">
             <a href="#main_scroll" class="menu_item active" style="--i:0;">Main</a>
             <a href="#about_me_scroll" class="menu_item" style="--i:1;">About me</a>
@@ -34,17 +37,20 @@
             <a href="#portfolio_scroll" class="menu_item" style="--i:3;">Portfolio</a>
             <a href="#contact_me_scroll" class="menu_item" style="--i:4;">Contact me</a>
         </nav>
+    {% endblock %}
     </header>
     <!-- -----main----- -->
     <section class="main" id="main_scroll">
         <div class="main_block">
             <div class="main_block_left">
                 <div class="block_left">
-                    <div class="title">Hi, I am</div>
-                    <div class="description">
-                        <div class="name">Oleksandr Prokopenko</div>
-                        <div class="sub_title">Python full-stack developer</div>
-                    </div>
+                    {% block name %}
+                        <div class="title">Hi, I am</div>
+                        <div class="description">
+                            <div class="name">Oleksandr Prokopenko</div>
+                            <div class="sub_title">Python full-stack developer</div>
+                        </div>
+                    {% endblock %}
                     <div class="links">
                         {% for social_link in social_links %}
                         <div class="link_box">
@@ -66,26 +72,25 @@
     <!-- -----my desctiption----- -->
     <div class="my_desctiption">
         <div class="my_desctiption_main">
-            <div class="my_desctiption_title">IT CAREER</div>
-            <div class="my_desctiption_about">
-                This is my web portfolio! 
-                 I am a young developer who is actively studying Fullstack development
-                 and has skills in Python. My goal is to create modern and innovative
-                 web applications that are functional and of high quality. 
-                 On the frontend, I use HTML, CSS, and JavaScript to develop user interfaces. 
-                 Ensuring user comfort and visual aesthetics is always in the 
-                 first place for me, I keep an eye on interaction and convenience. 
-                 In my backend projects, I use Python and various frameworks, 
-                 such as Django, to create stable and fast server applications. 
-                 I have practical experience with various databases, including SQLite and MySQL. 
-                 I am always open to new challenges and willing to learn and expand my skills. 
-                 I look forward to joining your project and contributing 
-                 to the creation of high quality web applications. 
-                 Thank you for your visit and interest in my achievements and projects!
-            </div>
-            <!-- <div class="my_desctiption_button">
-                <a href="">READ MORE</a>
-            </div> -->
+            {% block description %}
+                <div class="my_desctiption_title">IT CAREER</div>
+                <div class="my_desctiption_about">
+                    This is my web portfolio! 
+                    I am a young developer who is actively studying Fullstack development
+                    and has skills in Python. My goal is to create modern and innovative
+                    web applications that are functional and of high quality. 
+                    On the frontend, I use HTML, CSS, and JavaScript to develop user interfaces. 
+                    Ensuring user comfort and visual aesthetics is always in the 
+                    first place for me, I keep an eye on interaction and convenience. 
+                    In my backend projects, I use Python and various frameworks, 
+                    such as Django, to create stable and fast server applications. 
+                    I have practical experience with various databases, including SQLite and MySQL. 
+                    I am always open to new challenges and willing to learn and expand my skills. 
+                    I look forward to joining your project and contributing 
+                    to the creation of high quality web applications. 
+                    Thank you for your visit and interest in my achievements and projects!
+                </div>
+            {% endblock %}
         </div>
 
         <div class="my_desctiption_logo">
@@ -96,28 +101,34 @@
     <section class="about_me" id="about_me_scroll">
         <div class="about_me_main">
             <div class="page_title" id="about_me">
-                <p>ABOUT ME</p>
+                {% block about_me_title %}
+                    <p>ABOUT ME</p>
+                {% endblock %}
             </div>
-            <div class="about_me_text">
-                <p>Nulla in velit a metus rhoncus tempus. Nulla congue nulla vel sem varius finibus. 
-                Sed ornare sit amet lorem sed viverra. In vel urna quis libero viverra facilisis ut ac est.</p>
-            </div>
-            <div class="about_me_explore">
-                <p>EXPLORE</p>
-            </div>
+            {% block about_me %}
+                <div class="about_me_text">
+                    I am looking for my place in the world of code and technology. 
+                    My journey started with an interest in development, 
+                    and now I'm a young developer ready to invest energy and ideas in creating innovative web applications.
+                    I'm open to new challenges, sharing knowledge and learning from others. 
+                    Together we can create something great!
+                </div>
+            {% endblock %}
             <div class="img_separator">
                 <img src="/media/images/img_separator.png" alt="logo_separator">
             </div>
             <div class="about_me_disctiption">
                 {% for service in services %}
                     <div class="about_me_item">
-                        <div class="title">
-                            <img src="{{ service.img.url }}" alt="img" max-height="70" max-width="81">
-                            {{ service.title }}
-                        </div>
-                        <div class="text">
-                            {{ service.text }}
-                        </div>
+                        {% block services %}
+                            <div class="title">
+                                <img src="{{ service.img.url }}" alt="img" max-height="70" max-width="81">
+                                {{ service.title }}
+                            </div>
+                            <div class="text">
+                                {{ service.text }}
+                            </div>
+                        {% endblock %}
                     </div>
                 {% endfor %}
             </div>
@@ -129,10 +140,14 @@
     <!-- -----skills----- -->
     <section class="skills" id="skills_scroll">
         <div class="page_title" id="skills">
-            <p>SKILLS</p>
+            {% block skill_title %}
+                <p>SKILLS</p>
+            {% endblock %}
         </div>
         <div class="skills_title">
-            <p>USING NOW:</p>
+            {% block using_now %}
+                <p>USING NOW:</p>
+            {% endblock %}
         </div>
         <div class="skill_icons">
             {% for skill in skills %}
@@ -145,7 +160,9 @@
             {% endfor %}
         </div>
         <div class="skills_title">
-            <p>LEARNING:</p>
+            {% block learn %}
+                <p>LEARNING:</p>
+            {% endblock %}
         </div>
         <div class="skill_icons">
             {% for learn in learning %}
@@ -189,8 +206,11 @@
             <p>CONTACT</p>
         </div>
         <div class="contact_text">
-            <p>Nulla in velit a metus rhoncus tempus. Nulla congue nulla vel sem varius finibus. 
-            Sed ornare sit amet lorem sed viverra. In vel urna quis libero viverra facilisis ut ac est.
+            <p>
+                Leave your ideas and questions in the form below. 
+                I am ready to listen to you and create a web 
+                solution that meets your needs and expectations!
+            </p>
         </div>
         <div class="img_separator">
             <img src="/media/images/img_separator.png" alt="logo_separator">
@@ -203,14 +223,6 @@
             {% endfor %}
             </ul>
         {% endif %}
-        
-        <!-- <form method="post" action="" class="contact_form" lang="eu" autocomplete="off">
-            {% csrf_token %}
-            {{ contact_form.as_p }}
-            <div class="contact_buttom_container">
-                <button class="contact_buttom" type="submit">SUBMIT</button>
-            </div>
-        </form> -->
 
         <form method="post" action="" class="contact_form" lang="eu" autocomplete="off">
             {% csrf_token %}
@@ -255,10 +267,6 @@
             {% endfor %}
         </div>
         <p class="copy_text">&copy;2024 Olexandr Prokopenko All Rights Reserved.</p>
-        <div class="lenguage">
-            <a href="">English</a>
-            <a href="">Ukrainian</a>
-        </div>
     </div>
 </footer>
 </html>

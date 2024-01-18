@@ -56,51 +56,6 @@ table {
 
 /* ----------header---------- */
 
-/* .header {
-    display: flex;
-    position: fixed;
-    width: 100vw;
-    justify-content: space-between;
-    gap: 30px;
-    padding: 15px 0 15px;
-    background: #0B0B0B;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    z-index: 10;
-    transition: .5s;
-}
-
-.header.active {
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(6px);
-    transition: .5s;
-    padding: 10px 0 10px;
-}
-
-.header .navbar {
-    display: flex;
-    gap: 30px;
-    margin-left: auto;
-    margin-right: 30px;
-}
-
-/* @media (max-width: 425px) {
-    .header .header_menu {
-        flex-direction: column;
-        align-items: center;
-        margin: auto;
-    }
-
-    .header .header_menu a {
-        margin-bottom: 10px;
-    }
-} */
-
-/* @media (max-width: 768px) {
-    .header {
-        display: none;
-    }
-} */
-
 .header {
     display: flex;
     position: fixed;
@@ -373,7 +328,7 @@ table {
         top: 50%;
         left: 45%;
     }
-} */
+}
 
 .discriptoin {
     width: 100%;
@@ -422,29 +377,6 @@ table {
     font-weight: 400;
     line-height: 200%;
 }
-
-/* .my_desctiption_button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 139px;
-    height: 25px;
-    border-left: 3px solid #fff;
-    border-right: 3px solid #fff;
-}
-
-.my_desctiption_button a {
-    color: #FFF;
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    transition: transform 0.2s ease-in-out;
-}
-
-.my_desctiption_button a:hover {
-    transform: scale(1.1);
-} */
 
 .my_desctiption_logo {
     position: absolute;
@@ -501,7 +433,7 @@ table {
 }
 
 #about_me {
-    margin: 140px 0 75px; 
+    margin-top: 140px; 
 }
 
 #skills {
@@ -509,45 +441,16 @@ table {
 }
 
 .about_me_text {
-    width: 763px;
-    height: 47px;
-    padding: 90px 0 75px;
-    text-align: center;
-    max-width: 90vw;
-}
-
-.about_me_text p {
-    font-family: 'Open Sans', sans-serif;
+    max-width: 915px;
+    width: 90%;
+    padding: 100px 0px;
     color: #050505;
-    text-align: center;
-    font-size: 15px;
+    text-align: justify;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 138.682%;
-}
-
-.about_me_explore {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 139px;
-    height: 25px;
-    border-left: 3px solid #000;
-    border-right: 3px solid #000;
-}
-
-.about_me_explore p {
-    color: #000;
-    text-align: center;
-    font-family: 'Raleway', sans-serif;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-}
-
-.img_separator{
-    padding: 100px 0px 0px;
+    line-height: 200%;
 }
 
 .about_me_disctiption {
@@ -556,7 +459,7 @@ table {
     flex-wrap: wrap;
     max-width: 1070px;
     gap: 50px;
-    padding-top: 100px;
+    padding: 100px 0px;
 }
 
 .about_me_disctiption .about_me_item {
@@ -618,8 +521,7 @@ table {
 
 .skills_title {
     position: relative;
-    left: -35%;
-    padding: 50px 0 50px;
+    padding: 50px 0px;
 }
 
 @media (max-width: 900px) {
@@ -798,20 +700,18 @@ table {
 }
 
 .contact_text {
-    width: 763px;
-    height: 47px;
-    text-align: center;
-    max-width: 90vw;
-}
-
-.contact_text p{
-    font-family: 'Open Sans', sans-serif;
+    align-items: center;
+    width: 90%;
+    max-width: 700px;
+    padding: 45px 0px;
     color: #050505;
-    text-align: center;
-    font-size: 15px;
+    text-align: justify;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 138.682%;
+    line-height: 200%;
+    text-align: center;
 }
 
 .contact_form {
@@ -847,7 +747,7 @@ label[for="id_message"] {
 .contact_form label {
     display: none;
     visibility: hidden;
-  }
+}
 
 .error_message {
     padding-top: 40px;
@@ -861,12 +761,11 @@ label[for="id_message"] {
 
 .success {
     color: rgb(0, 129, 0);
-  }
+}
   
-  /* Стилі для повідомлень про помилку */
-  .error {
+.error {
     color: rgb(122, 0, 0);
-  }
+}
 
 @media (max-width: 600px) {
     .contact_form input, .contact_form textarea {
@@ -979,22 +878,4 @@ label[for="id_message"] {
     font-family: 'Nunito', sans-serif;
     padding-top: 40px;
     text-align: center;
-}
-
-.lenguage {
-    display: flex;
-    padding: 30px 0px;
-    gap: 30px;
-}
-
-.lenguage a {
-    text-decoration: none;
-    color: #fff;
-    font-family: 'Montserrat', sans-serif;
-    border-bottom: 2px solid transparent; /* Додайте початкову лінію і встановіть її прозорість */
-    transition: border-bottom 0.2s ease-in-out; /* Додайте плавність для лінії */
-}
-
-.lenguage a:hover {
-    border-bottom: 2px solid #fff; /* Змініть кольор лінії при наведенні курсору */
 }
