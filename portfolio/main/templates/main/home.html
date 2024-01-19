@@ -179,15 +179,17 @@
     <section class="portfolio" id="portfolio_scroll">
         <div class="portfolio_title">
             <div class="page_title" id="portfolio">
-                <p>PORTFOLIO</p>
+                {% block portfolio_title %}
+                    <p>PORTFOLIO</p>
+                {% endblock %}
             </div>
         </div>
         <div class="portfolio_main">
-            <div class="portfolio_menu">
+            <!-- <div class="portfolio_menu">
                 <div class="menu_link active"><a href="#" onclick="return false;">ALL</a></div>
                 <div class="menu_link"><a href="#" onclick="return false;">CODED</a></div>
                 <div class="menu_link"><a href="#" onclick="return false;">DESIGNED</a></div>
-            </div>         
+            </div> -->
         </div>
         <div class="portfolio_sites">
             {% for site in portfolio_sites %}
@@ -197,20 +199,24 @@
             {% endfor %}
         </div> 
         <div class="portfolio_footer">
-            <p>And many more to come!</p>
+            {% block portfolio_footer %}
+                <p>And many more to come!</p>
+            {% endblock %}
         </div>   
     </section>
     <!-- -----contact----- -->
     <section class="contact" id="contact_me_scroll">
         <div class="page_title" id="contact">
-            <p>CONTACT</p>
+            {% block contact_title %}
+                <p>CONTACT</p>
+            {% endblock %}
         </div>
         <div class="contact_text">
-            <p>
-                Leave your ideas and questions in the form below. 
-                I am ready to listen to you and create a web 
-                solution that meets your needs and expectations!
-            </p>
+            {% block contact_text %}
+                <p>Leave your ideas and questions in the form below. 
+                    I am ready to listen to you and create a web 
+                    solution that meets your needs and expectations!</p>
+            {% endblock %}
         </div>
         <div class="img_separator">
             <img src="/media/images/img_separator.png" alt="logo_separator">
@@ -224,28 +230,30 @@
             </ul>
         {% endif %}
 
-        <form method="post" action="" class="contact_form" lang="eu" autocomplete="off">
-            {% csrf_token %}
-            <label for="{{ contact_form.name.id_for_label }}">Name:</label>
-            <input type="text" name="{{ contact_form.name.name }}" id="{{ contact_form.name.id_for_label }}"
-                   placeholder="ENTER YOUR NAME*" maxlength="{{ contact_form.name.max_length }}" required>
+        {% block form %}
+            <form method="post" action="" class="contact_form" lang="eu" autocomplete="off">
+                {% csrf_token %}
+                <label for="{{ contact_form.name.id_for_label }}">Name:</label>
+                <input type="text" name="{{ contact_form.name.name }}" id="{{ contact_form.name.id_for_label }}"
+                    placeholder="ENTER YOUR NAME*" maxlength="{{ contact_form.name.max_length }}" required>
+                
+                <label for="{{ contact_form.email.id_for_label }}">Email:</label>
+                <input type="email" name="{{ contact_form.email.name }}" id="{{ contact_form.email.id_for_label }}"
+                    placeholder="ENTER YOUR EMAIL*" required>
             
-            <label for="{{ contact_form.email.id_for_label }}">Email:</label>
-            <input type="email" name="{{ contact_form.email.name }}" id="{{ contact_form.email.id_for_label }}"
-                   placeholder="ENTER YOUR EMAIL*" required>
-        
-            <label for="{{ contact_form.phone_number.id_for_label }}">Phone Number:</label>
-            <input type="text" name="{{ contact_form.phone_number.name }}" id="{{ contact_form.phone_number.id_for_label }}"
-                   placeholder="PHONE NUMBER" maxlength="{{ contact_form.phone_number.max_length }}">
+                <label for="{{ contact_form.phone_number.id_for_label }}">Phone Number:</label>
+                <input type="text" name="{{ contact_form.phone_number.name }}" id="{{ contact_form.phone_number.id_for_label }}"
+                    placeholder="PHONE NUMBER" maxlength="{{ contact_form.phone_number.max_length }}">
+                
+                <label for="{{ contact_form.message.id_for_label }}">Message:</label>
+                <textarea name="{{ contact_form.message.name }}" id="{{ contact_form.message.id_for_label }}"
+                        placeholder="YOUR MESSAGE*" required></textarea>
             
-            <label for="{{ contact_form.message.id_for_label }}">Message:</label>
-            <textarea name="{{ contact_form.message.name }}" id="{{ contact_form.message.id_for_label }}"
-                      placeholder="YOUR MESSAGE*" required></textarea>
-        
-            <div class="contact_buttom_container">
-                <button class="contact_buttom" type="submit">SUBMIT</button>
-            </div>
-        </form>
+                <div class="contact_buttom_container">
+                    <button class="contact_buttom" type="submit">SUBMIT</button>
+                </div>
+            </form>
+        {% endblock %}
 
 
     </section>
@@ -255,7 +263,9 @@
     <div class="footer_main">
         <div class="arrow" onclick="scrollToTop()">
             <img src="/media/images/img_arrow_top.png" alt="arrow">
-            <p>BACK TO TOP</p>
+            {% block back_to_top %}
+                <p>BACK TO TOP</p>
+            {% endblock %}
         </div>
         <div class="footer_links">
             {% for footer_link in footer_links %}
@@ -266,7 +276,9 @@
                 </div>
             {% endfor %}
         </div>
-        <p class="copy_text">&copy;2024 Olexandr Prokopenko All Rights Reserved.</p>
+        {% block copy %}
+            <p class="copy_text">&copy;2024 Olexandr Prokopenko All Rights Reserved.</p>
+        {% endblock %}
     </div>
 </footer>
 </html>

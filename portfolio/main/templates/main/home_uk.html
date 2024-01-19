@@ -77,3 +77,54 @@
 {% block learn %}
     <p>Вивчаю:</p>
 {% endblock %}
+
+{% block portfolio_title %}
+    <p>ПОРТФОЛІО</p>
+{% endblock %}
+
+{% block portfolio_footer %}
+    <p>І ще багато чого попереду!</p>
+{% endblock %}
+
+{% block contact_title %}
+    <p>КОНТАКТИ</p>
+{% endblock %}
+
+{% block contact_text %}
+    <p>Залишайте свої ідеї та запитання у формі нижче. 
+        Я готовий вислухати вас і створити веб-рішення 
+        рішення, яке відповідає вашим потребам та очікуванням!</p>
+{% endblock %}
+
+{% block form %}
+    <form method="post" action="" class="contact_form" lang="eu" autocomplete="off">
+        {% csrf_token %}
+        <label for="{{ contact_form.name.id_for_label }}">Name:</label>
+        <input type="text" name="{{ contact_form.name.name }}" id="{{ contact_form.name.id_for_label }}"
+            placeholder="ВВЕДІТЬ ІМ'Я*" maxlength="{{ contact_form.name.max_length }}" required>
+        
+        <label for="{{ contact_form.email.id_for_label }}">Email:</label>
+        <input type="email" name="{{ contact_form.email.name }}" id="{{ contact_form.email.id_for_label }}"
+            placeholder="ВВЕДІТЬ EMAIL*" required>
+
+        <label for="{{ contact_form.phone_number.id_for_label }}">Phone Number:</label>
+        <input type="text" name="{{ contact_form.phone_number.name }}" id="{{ contact_form.phone_number.id_for_label }}"
+            placeholder="НОМЕР ТЕЛЕФОНУ" maxlength="{{ contact_form.phone_number.max_length }}">
+        
+        <label for="{{ contact_form.message.id_for_label }}">Message:</label>
+        <textarea name="{{ contact_form.message.name }}" id="{{ contact_form.message.id_for_label }}"
+                placeholder="ПОВІДОМЛЕННЯ*" required></textarea>
+
+        <div class="contact_buttom_container">
+            <button class="contact_buttom" type="submit">НАДІСЛАТИ</button>
+        </div>
+    </form>
+{% endblock %}
+
+{% block back_to_top %}
+    <p>В ГОРУ</p>
+{% endblock %}
+
+{% block copy %}
+    <p class="copy_text">&copy;2024 Олександр Прокопенко Всі права захищені.</p>
+{% endblock %}
