@@ -36,6 +36,7 @@
             <a href="#skills_scroll" class="menu_item" style="--i:2;">Skills</a>
             <a href="#portfolio_scroll" class="menu_item" style="--i:3;">Portfolio</a>
             <a href="#contact_me_scroll" class="menu_item" style="--i:4;">Contact me</a>
+            <a href="#" class="language" style="--i:5;">UK</a>
         </nav>
     {% endblock %}
     </header>
@@ -67,6 +68,40 @@
                     <img src="/media/images/img_main.png" alt="main_logo" height="1140" width="1018">
                 </div>
             </div>
+
+
+
+            <div class="main_block_mobile">
+                <img src="/media/images/img_main.png" alt="main_logo" height="500" width="446">
+                <div class="main_block_mobile--description">
+                    <div class="mobile_description_left">
+                        {% block name_mobile %}
+                            <div class="title">Hi, I am</div>
+                            <div class="description">
+                                <div class="name">Oleksandr Prokopenko</div>
+                                <div class="sub_title">Python backend developer</div>
+                            </div>
+                        {% endblock %}
+                    </div>
+                    <div class="mobile_description_right">
+                        {% for social_link in social_links %}
+                            <a href="{{ social_link.link }}" target="_blank">
+                                <img src="{{ social_link.img.url }}" alt="{{ social_link.text }}" width="37">
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="main_block_mobile--white">
+                    
+                </div>
+                <div class="main_block_mobile--grey">
+
+                </div>
+            </div>
+
+
+
+
         </div>
     </section>
     <!-- -----my desctiption----- -->
