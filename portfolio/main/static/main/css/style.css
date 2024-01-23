@@ -245,7 +245,7 @@ table {
 .mobile_description_right {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
 
 .main_block_mobile--description .mobile_description_right a {
@@ -254,8 +254,8 @@ table {
 
 .main_block_mobile--description .mobile_description_right a img {
     position: relative;
-    width: 24px;
-    height: 24px;
+    max-width: 30px;
+    max-height: 30px;
 }
 
 .main_block_mobile--white {
@@ -333,6 +333,48 @@ table {
     flex-direction: column;
     align-items: start;
     gap: 50px;
+    padding-left: 20px;
+}
+
+.main_image {
+    z-index: 1;
+    position: absolute;
+    right: 15%;
+    transform: rotate(-9.667deg) translate(-100%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+.main_image img{
+    height: 1350px;
+    width: 1205px;
+}
+
+@media (max-width: 1440px) {
+    .main_image {
+        transform: rotate(-9.667deg) translate(-100%, -50%);
+        top: 50%;
+        left: 45%;
+    }
+
+    .main_image img {
+        height: 1200px;
+        width: 1071px;
+    }
+}
+
+@media (max-width: 1366px) {
+    .main_image img {
+        height: 900px;
+        width: 804px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .main_image img {
+        height: 900px;
+        width: 804px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -358,15 +400,13 @@ table {
         display: none!important;
     }
 
+    .main .main_block img {
+        height: 800px;
+        width: 714px;
+    }
+    
     .main_block_mobile {
         display: unset;
-    }
-}
-
-@media (max-width: 1300px) {
-    .main .main_block_left .block_left {
-        max-width: 400px;
-        padding: 20px;
     }
 }
 
@@ -404,23 +444,6 @@ table {
     width: 75%;
     transform: rotate(9.667deg);
     z-index: 0;
-}
-
-.main_image {
-    z-index: 1;
-    position: absolute;
-    right: 15%;
-    transform: rotate(-9.667deg) translate(-100%, -50%) scale(1.3);
-    top: 50%;
-    left: 50%;
-}
-
-@media (max-width: 1440px) {
-    .main_image {
-        transform: rotate(-9.667deg) translate(-100%, -50%) scale(0.8);
-        top: 50%;
-        left: 45%;
-    }
 }
 
 .discriptoin {

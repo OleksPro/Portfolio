@@ -35,6 +35,7 @@ links_category = (
     ('social_links', 'social_links'),
     ('site_links', 'site_links'),
     ('footer_links', 'footer_links'),
+    ('mobile', 'mobile')
 )
 
 class AllLinks(models.Model):

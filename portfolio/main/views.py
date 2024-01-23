@@ -19,6 +19,7 @@ class BaseHomeView(ListView):
         ctx['social_links'] = AllLinks.objects.filter(category='social_links')
         ctx['site_links'] = AllLinks.objects.filter(category='site_links')
         ctx['footer_links'] = AllLinks.objects.filter(category='footer_links')
+        ctx['mobile'] = AllLinks.objects.filter(category='mobile')
 
         # Додавання об'єкта форми до контексту
         # Add form object to the context
