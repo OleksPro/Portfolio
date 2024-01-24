@@ -62,7 +62,7 @@ table {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 1.3rem 10%;
+    padding: 1.3rem 50px;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
@@ -118,11 +118,11 @@ table {
 
 @media (max-width: 1010px) {
     .header {
-        padding: 1.2rem 5%;
+        padding: 1.2rem 30px;
     }
 }
 
-@media (max-width: 840px) {
+@media (max-width: 1000px) {
     .icons {
         display: inline-flex;
     }
@@ -333,7 +333,7 @@ table {
     flex-direction: column;
     align-items: start;
     gap: 50px;
-    padding-left: 20px;
+    padding-left: 50px;
 }
 
 .main_image {
@@ -346,34 +346,44 @@ table {
 }
 
 .main_image img{
-    height: 1350px;
-    width: 1205px;
+    height: 85vh;
+    width: auto;
 }
 
 @media (max-width: 1440px) {
     .main_image {
         transform: rotate(-9.667deg) translate(-100%, -50%);
         top: 50%;
-        left: 45%;
+        right: 15%;
     }
 
     .main_image img {
-        height: 1200px;
-        width: 1071px;
+        height: 85vh;
+        width: auto;
     }
 }
 
 @media (max-width: 1366px) {
     .main_image img {
-        height: 900px;
-        width: 804px;
+        height: 85vh;
+        width: auto;
+    }
+
+    .main_block_left {
+        max-width: 540px;
+        font-size: 40px;
     }
 }
 
 @media (max-width: 1024px) {
     .main_image img {
-        height: 900px;
-        width: 804px;
+        height: 85vh;
+        width: auto;
+    }
+
+    .main_block_left .name {
+        max-width: 420px;
+        font-size: 40px;
     }
 }
 
@@ -401,8 +411,8 @@ table {
     }
 
     .main .main_block img {
-        height: 800px;
-        width: 714px;
+        height: 85vh;
+        width: auto;
     }
     
     .main_block_mobile {
@@ -412,6 +422,14 @@ table {
 
 .menu_item:hover,
 .menu_item.active {
+    background-color: #fff;
+    color: #000;
+    border-radius: 30px;
+    outline: none;
+    transition: background-color 1s, color 1s, border-radius 1s;
+}
+
+.language:hover {
     background-color: #fff;
     color: #000;
     border-radius: 30px;
