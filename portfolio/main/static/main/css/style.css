@@ -369,8 +369,9 @@ table {
         width: auto;
     }
 
-    .main_block_left {
-        max-width: 540px;
+    .main_block_left .name, 
+    .main_block_left .title {
+        max-width: 420px;
         font-size: 40px;
     }
 }
