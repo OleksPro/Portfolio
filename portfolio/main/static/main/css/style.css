@@ -210,7 +210,7 @@ table {
     display: flex;
     box-sizing: border-box;
     justify-content: space-between;
-    padding: 20px;
+    padding: 30px;
     position: relative;
     top: 0;
     left: 0;
@@ -254,8 +254,8 @@ table {
 
 .main_block_mobile--description .mobile_description_right a img {
     position: relative;
-    max-width: 30px;
-    max-height: 30px;
+    width: 40px;
+    height: auto;
 }
 
 .main_block_mobile--white {
@@ -309,7 +309,7 @@ table {
 
 .main_block_left .name {
     max-width: 600px;
-    font-size: 50px;
+    font-size: 40px;
     font-weight: bold;
     font-family: 'Raleway', sans-serif;
 }
