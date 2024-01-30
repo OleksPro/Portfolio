@@ -341,7 +341,7 @@ table {
     position: absolute;
     right: 15%;
     transform: rotate(-9.667deg) translate(-100%, -50%);
-    top: 50%;
+    top: 45%;
     left: 50%;
 }
 
@@ -380,6 +380,10 @@ table {
     .main_image img {
         height: 85vh;
         width: auto;
+    }
+
+    .main_image {
+        right: 5%;
     }
 
     .main_block_left .name {
