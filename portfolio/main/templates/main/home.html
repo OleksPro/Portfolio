@@ -211,14 +211,9 @@
             </div>
         </div>
         <div class="portfolio_main">
-            <!-- <div class="portfolio_menu">
-                <div class="menu_link active"><a href="#" onclick="return false;">ALL</a></div>
-                <div class="menu_link"><a href="#" onclick="return false;">CODED</a></div>
-                <div class="menu_link"><a href="#" onclick="return false;">DESIGNED</a></div>
-            </div> -->
         </div>
         <div class="portfolio_sites">
-            {% for site in portfolio_sites %}
+            {% for site in site_links %}
                 <div class="sites_img_conatainer">
                     <a href="{{ site.site_link }}" target="_blank"><img class="sites_img" src="{{ site.img.url }}" alt="{{ site.title }}"></a>
                 </div>
