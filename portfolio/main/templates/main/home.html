@@ -242,14 +242,19 @@
         <div class="img_separator">
             <img src="/media/images/img_separator.png" alt="logo_separator">
         </div>
-
+        
         {% if messages %}
             <ul class="error_message">
             {% for message in messages %}
-                <li class="{% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</li>
+                {% block message %}
+                    <li class="{% if message.tags %}{{ message.tags }}{% endif %}">
+                        Thank you for your inquiry. We will contact you shortly.
+                    </li>
+                {% endblock %}
             {% endfor %}
             </ul>
         {% endif %}
+        
 
         {% block form %}
             <form method="post" action="" class="contact_form" lang="eu" autocomplete="off">

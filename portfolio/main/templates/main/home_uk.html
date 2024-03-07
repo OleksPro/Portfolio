@@ -105,6 +105,12 @@
         рішення, яке відповідає вашим потребам та очікуванням!</p>
 {% endblock %}
 
+{% block message %}
+    <li class="{% if message.tags %}{{ message.tags }}{% endif %}">
+        Дякуємо за ваш запит. Ми зв'яжемося з вами найближчим часом.
+    </li>
+{% endblock %}
+            
 {% block form %}
     <form method="post" action="" class="contact_form" lang="eu" autocomplete="off">
         {% csrf_token %}
